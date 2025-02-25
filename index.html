@@ -3,24 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Canvas Básica</title>
+    <title>Formas en Canvas</title>
     <link rel="icon" href="https://img.icons8.com/?size=512&id=n5SduwU2J7N1&format=png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Liter&family=Shizuru&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Liter", serif;
+            background: linear-gradient(135deg, #f3b7e6, #c9d7f5); 
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4A90E2;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .canvas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .canvas {
+            border-radius: 10px;
+            background-color: #f7f7f7;
+            margin-top: 20px;
+            border: 2px solid #ddd;
+            width: 100%;
+        }
+        .footer {
+            background: rgba(31, 6, 6, 0.277); /* Transparente con desenfoque */
+            backdrop-filter: blur(10px);
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-family: "Liter", serif;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            margin: 0;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        .footer p:hover {
+            opacity: 1;
+            color: #ff9b9b; /* Rosa pastel al pasar el mouse */
+            transition: color 0.3s ease-in-out;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="card shadow border border-light rounded rounded" style="width: 100%; max-width: 600px; padding: 20px;">
-         
-            <div class="card-header text-center">
-                <h3>Mi Aplicación Canvas</h3>
-            </div>
-
-            <div class="card-body text-center">
-                <canvas id="canvas" class="rounded" width="500" height="300"></canvas>
-            </div>
-        </div>
+    <div class="container mt-4">
+        <h2 class="card-title mb-4">Formas en Canvas</h2>
+        <div id="canvasGrid" class="canvas-container"></div>
     </div>
+
+    <footer class="footer mt-5">
+        <div class="footer-container">
+            
+            <div class="brand">
+                <p>Desarrollado por Lisset Gutiérrez Cruz</p>
+                <p>© 2025 Lissy-Hub. Todos los derechos reservados.</p>
+            </div>
+            
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
